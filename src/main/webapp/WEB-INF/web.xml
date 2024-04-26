@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>LoginRegister</display-name>
+  <welcome-file-list>
+    <welcome-file>Register.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Using remove.jsp extention in logim.html page -->
+  
+  <servlet>
+  <servlet-name>about</servlet-name>
+  <jsp-file>/login.html</jsp-file>
+  </servlet>
+  
+ <servlet-mapping>
+  <servlet-name>about</servlet-name>
+ <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+  <servlet-name>friday</servlet-name>
+  <servlet-class>com.Folder.RegServlet</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+  <servlet-name>friday</servlet-name>
+  <url-pattern>/execute</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>sat</servlet-name>
+  <servlet-class>com.Folder.RegServlet2</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+  <servlet-name>sat</servlet-name>
+  <url-pattern>/executeAgain</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+    <filter-name>myFilter</filter-name>
+    <filter-class>com.Folder.MyFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>myFilter</filter-name>
+    <url-pattern>/execute</url-pattern>
+</filter-mapping>
+  
+  
+</web-app>
